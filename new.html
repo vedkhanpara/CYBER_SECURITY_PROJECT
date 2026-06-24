@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Checker</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <h1 class="title-white">Password</h1>
+            <h1 class="title-purple">Strength Checker</h1>
+            <p class="subtitle">Real-time analysis. Nothing leaves your device.</p>
+        </div>
+
+        <div class="input-section">
+            <label class="input-label">YOUR PASSWORD</label>
+            <div class="input-wrap">
+                <input type="password" id="password" placeholder="Type or generate a password"
+                    oninput="checkPassword()" />
+                <button class="icon-btn" onclick="copyPassword()" title="Copy">
+                    <i class="ti ti-copy"></i>
+                </button>
+                <button class="icon-btn" id="toggleBtn" onclick="toggleVisibility()" title="Show/Hide">
+                    <i class="ti ti-eye"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="status-row">
+            <span id="statusLabel" class="status-label">Awaiting input</span>
+            <span class="dash">—</span>
+        </div>
+
+        <div class="progress-row" id="progressSegs">
+            <div class="seg" id="seg0"></div>
+            <div class="seg" id="seg1"></div>
+            <div class="seg" id="seg2"></div>
+            <div class="seg" id="seg3"></div>
+            <div class="seg" id="seg4"></div>
+        </div>
+
+        <div class="chips">
+            <div class="chip" id="chip0">
+                <div class="chip-dot" id="dot0">✓</div> At least 8 characters
+            </div>
+            <div class="chip" id="chip1">
+                <div class="chip-dot" id="dot1">✓</div> Uppercase letter
+            </div>
+            <div class="chip" id="chip2">
+                <div class="chip-dot" id="dot2">✓</div> Lowercase letter
+            </div>
+            <div class="chip" id="chip3">
+                <div class="chip-dot" id="dot3">✓</div> Number
+            </div>
+            <div class="chip" id="chip4">
+                <div class="chip-dot" id="dot4">✓</div> Special character
+            </div>
+        </div>
+
+        <div class="btn-row">
+            <button class="btn-generate" onclick="generatePassword()">
+                <i class="ti ti-sparkles"></i> Generate strong password
+            </button>
+            <button class="btn-reset" onclick="resetAll()">
+                <i class="ti ti-refresh"></i> Reset
+            </button>
+        </div>
+
+    </div>
+
+    <script src="logic.js"></script>
+
+</body>
+
+</html>
